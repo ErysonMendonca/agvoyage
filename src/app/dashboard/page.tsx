@@ -26,7 +26,7 @@ export default function DashboardPage() {
       animate="visible"
       style={{ display: 'flex', flexDirection: 'column', gap: '2rem', paddingBottom: '2rem' }}
     >
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+      <div className="dashboard-header">
         <div>
           <h1 className="font-serif" style={{ fontSize: '2.5rem', marginBottom: '0.5rem', color: 'var(--text-white)' }}>
             Overview Executivo
@@ -46,8 +46,8 @@ export default function DashboardPage() {
       <div className="bento-grid">
         
         {/* Main Revenue Card */}
-        <motion.div variants={itemVariants} className="glass-panel premium-border" style={{ gridColumn: 'span 2', padding: '2rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+        <motion.div variants={itemVariants} className="glass-panel premium-border col-span-2" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          <div className="card-header">
             <div>
               <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '0.5rem' }}>Faturamento Mensal</div>
               <div style={{ fontSize: '3.5rem', fontWeight: '900', color: '#fff', lineHeight: 1 }}>R$ 1.2M</div>
@@ -86,7 +86,7 @@ export default function DashboardPage() {
         <StatCard title="Taxa de Conversão" value="68%" icon={Activity} trend="-2%" positive={false} />
 
         {/* Recent Activity List */}
-        <motion.div variants={itemVariants} className="glass-panel" style={{ gridColumn: 'span 2', padding: '2rem' }}>
+        <motion.div variants={itemVariants} className="glass-panel col-span-2" style={{ padding: '2rem' }}>
           <h3 className="gold-text" style={{ fontSize: '1.2rem', marginBottom: '1.5rem' }}>Últimas Movimentações</h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <ActivityRow user="João Silva" action="Pagamento Confirmado" target="Reserva Maldivas" time="10 min atrás" amount="R$ 45.000" status="approved" />
@@ -107,7 +107,7 @@ function StatCard({ title, value, icon: Icon, trend, positive }: { title: string
       className="glass-panel" 
       style={{ padding: '2rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
     >
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+      <div className="card-header">
         <div style={{ background: 'rgba(255,255,255,0.05)', padding: '1rem', borderRadius: '12px' }}>
           <Icon size={24} className="gold-text" />
         </div>
@@ -126,7 +126,7 @@ function StatCard({ title, value, icon: Icon, trend, positive }: { title: string
 
 function ActivityRow({ user, action, target, time, amount, status }: any) {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1rem', background: 'rgba(255,255,255,0.02)', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.02)', transition: 'background 0.3s ease', cursor: 'pointer' }}
+    <div className="activity-row" style={{ padding: '1rem', background: 'rgba(255,255,255,0.02)', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.02)', transition: 'background 0.3s ease', cursor: 'pointer' }}
          onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.05)'}
          onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.02)'}
     >

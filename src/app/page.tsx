@@ -20,12 +20,13 @@ const Navbar = () => {
   return (
     <motion.nav 
       initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.8, ease: "easeOut" }}
+      className="nav-padding"
       style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
         background: scrolled ? 'rgba(10, 20, 40, 0.85)' : 'transparent',
         backdropFilter: scrolled ? 'blur(20px)' : 'none',
         borderBottom: scrolled ? '1px solid rgba(212, 175, 55, 0.1)' : '1px solid transparent',
-        transition: 'all 0.3s ease', padding: '1rem 4rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center'
+        transition: 'all 0.3s ease', display: 'flex', justifyContent: 'space-between', alignItems: 'center'
       }}
     >
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
@@ -155,7 +156,7 @@ export default function UltraPremiumPage() {
             Você sonha. A gente realiza.
           </motion.p>
 
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 1.2 }} style={{ display: 'flex', gap: '2rem', justifyContent: 'center' }}>
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 1.2 }} className="hero-buttons">
             <button style={{ background: 'var(--gold-main)', color: '#0A1428', border: 'none', padding: '1.2rem 3rem', borderRadius: '4px', fontSize: '1rem', fontWeight: 'bold', cursor: 'pointer', boxShadow: '0 10px 30px rgba(212, 175, 55, 0.3)' }}>
               Explorar Destinos
             </button>
@@ -174,7 +175,7 @@ export default function UltraPremiumPage() {
       </section>
 
       {/* DESTINOS EM DESTAQUE (Carousel) */}
-      <section style={{ padding: '8rem 4rem', position: 'relative' }}>
+      <section className="section-padding" style={{ position: 'relative' }}>
         <h2 className="font-serif" style={{ fontSize: '3rem', color: '#fff', marginBottom: '3rem', textAlign: 'center' }}>
           Nossos Destinos em <span style={{ color: 'var(--gold-main)' }}>Destaque</span>
         </h2>
@@ -208,13 +209,13 @@ export default function UltraPremiumPage() {
       </section>
 
       {/* EXPERIÊNCIAS QUE TRANSFORMAM */}
-      <section style={{ padding: '8rem 4rem', background: 'var(--secondary-navy)', position: 'relative' }}>
+      <section className="section-padding" style={{ background: 'var(--secondary-navy)', position: 'relative' }}>
         <h2 className="font-serif" style={{ fontSize: '3rem', color: '#fff', marginBottom: '1rem', textAlign: 'center' }}>
           Experiências que <span style={{ color: 'var(--cyan-accent)' }}>Transformam</span>
         </h2>
         <p style={{ textAlign: 'center', color: 'rgba(255,255,255,0.6)', marginBottom: '4rem', fontSize: '1.2rem' }}>Curadoria especializada para cada momento da sua vida.</p>
         
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
           {[
             { title: "Românticas", icon: Heart },
             { title: "Corporativas", icon: Globe },
@@ -239,8 +240,8 @@ export default function UltraPremiumPage() {
       </section>
 
       {/* CONSULTORIA VISTO EXPRESS */}
-      <section style={{ padding: '8rem 10vw', position: 'relative' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+      <section className="section-padding-vw" style={{ position: 'relative' }}>
+        <div className="grid-cols-2">
           <div>
             <h2 className="font-serif" style={{ fontSize: '2.5rem', color: '#fff', marginBottom: '2rem' }}>
               Consultoria Visto Express <br/> <span style={{ color: 'var(--gold-main)' }}>Simples e Eficiente</span>
@@ -277,9 +278,9 @@ export default function UltraPremiumPage() {
       </section>
 
       {/* POR QUE ESCOLHER */}
-      <section style={{ padding: '6rem 4rem', background: 'var(--secondary-navy)' }}>
+      <section className="section-padding-sm" style={{ background: 'var(--secondary-navy)' }}>
         <h2 className="font-serif" style={{ fontSize: '2.5rem', color: '#fff', marginBottom: '4rem', textAlign: 'center' }}>Por Que Escolher a AG Voyage</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2rem' }}>
+        <div className="grid-cols-4">
           {[
             { icon: Diamond, title: "Exclusividade em Cada Detalhe" },
             { icon: Globe, title: "Destinos ao Redor do Mundo" },
@@ -303,8 +304,8 @@ export default function UltraPremiumPage() {
       </section>
 
       {/* FOOTER */}
-      <footer style={{ background: '#050a14', padding: '6rem 4rem 2rem 4rem', borderTop: '1px solid rgba(212, 175, 55, 0.1)' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr 1fr', gap: '4rem', marginBottom: '4rem' }}>
+      <footer className="footer-padding" style={{ background: '#050a14', borderTop: '1px solid rgba(212, 175, 55, 0.1)' }}>
+        <div className="footer-grid">
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.5rem' }}>
               <span className="font-serif" style={{ fontSize: '1.5rem', color: 'var(--gold-main)', fontWeight: 'bold' }}>AG</span>
