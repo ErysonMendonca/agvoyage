@@ -48,9 +48,10 @@ const Navbar = () => {
       </div>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-        <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.9rem', cursor: 'pointer' }}>PT-BR</span>
+        <span className="nav-lang" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.9rem', cursor: 'pointer' }}>PT-BR</span>
         <motion.button 
           whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(212, 175, 55, 0.4)' }} whileTap={{ scale: 0.95 }}
+          className="nav-btn"
           style={{ background: 'var(--gold-main)', color: '#0A1428', border: 'none', padding: '0.8rem 1.5rem', borderRadius: '4px', fontWeight: 'bold', cursor: 'pointer' }}
         >
           Fale Conosco
@@ -141,7 +142,7 @@ export default function UltraPremiumPage() {
         <motion.div style={{ position: 'relative', zIndex: 10, textAlign: 'center', y: yHeroText, opacity: opacityHeroText, maxWidth: '1000px', padding: '0 2rem' }}>
           <motion.h1 
             initial={{ opacity: 0, y: 50, filter: 'blur(10px)' }} animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }} transition={{ duration: 1.5, ease: [0.19, 1, 0.22, 1] }}
-            className="font-serif" style={{ fontSize: 'clamp(3rem, 7vw, 6rem)', color: '#fff', lineHeight: 1.1, marginBottom: '1.5rem', textShadow: '0 10px 30px rgba(0,0,0,0.5)' }}
+            className="font-serif hero-title" style={{ color: '#fff', lineHeight: 1.1, marginBottom: '1.5rem', textShadow: '0 10px 30px rgba(0,0,0,0.5)' }}
           >
             Destinos Incríveis. <br/>
             <span style={{ background: 'linear-gradient(to right, var(--gold-light), var(--gold-main))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
@@ -151,7 +152,7 @@ export default function UltraPremiumPage() {
           
           <motion.p 
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.8 }}
-            style={{ fontSize: '1.4rem', color: 'rgba(255,255,255,0.7)', letterSpacing: '2px', marginBottom: '3rem', textTransform: 'uppercase' }}
+            className="hero-subtitle" style={{ color: 'rgba(255,255,255,0.7)', letterSpacing: '2px', marginBottom: '3rem', textTransform: 'uppercase' }}
           >
             Você sonha. A gente realiza.
           </motion.p>
@@ -176,7 +177,7 @@ export default function UltraPremiumPage() {
 
       {/* DESTINOS EM DESTAQUE (Carousel) */}
       <section className="section-padding" style={{ position: 'relative' }}>
-        <h2 className="font-serif" style={{ fontSize: '3rem', color: '#fff', marginBottom: '3rem', textAlign: 'center' }}>
+        <h2 className="font-serif section-title" style={{ color: '#fff', marginBottom: '3rem', textAlign: 'center' }}>
           Nossos Destinos em <span style={{ color: 'var(--gold-main)' }}>Destaque</span>
         </h2>
         
@@ -192,7 +193,7 @@ export default function UltraPremiumPage() {
               animate={{ y: [0, -15, 0] }}
               transition={{ repeat: Infinity, duration: 4 + i, ease: "easeInOut" }}
               whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(0,0,0,0.5)' }}
-              style={{ minWidth: '350px', height: '500px', borderRadius: '24px', position: 'relative', overflow: 'hidden', border: '1px solid rgba(212,175,55,0.2)', cursor: 'pointer' }}
+              className="carousel-card" style={{ borderRadius: '24px', position: 'relative', overflow: 'hidden', border: '1px solid rgba(212,175,55,0.2)', cursor: 'pointer' }}
             >
               <Image src="/images/hero-premium.png" alt={dest.name} fill sizes="(max-width: 768px) 100vw, 350px" style={{ objectFit: 'cover', filter: 'brightness(0.7)' }} />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, var(--primary-navy), transparent)' }} />
@@ -210,12 +211,12 @@ export default function UltraPremiumPage() {
 
       {/* EXPERIÊNCIAS QUE TRANSFORMAM */}
       <section className="section-padding" style={{ background: 'var(--secondary-navy)', position: 'relative' }}>
-        <h2 className="font-serif" style={{ fontSize: '3rem', color: '#fff', marginBottom: '1rem', textAlign: 'center' }}>
+        <h2 className="font-serif section-title" style={{ color: '#fff', marginBottom: '1rem', textAlign: 'center' }}>
           Experiências que <span style={{ color: 'var(--cyan-accent)' }}>Transformam</span>
         </h2>
         <p style={{ textAlign: 'center', color: 'rgba(255,255,255,0.6)', marginBottom: '4rem', fontSize: '1.2rem' }}>Curadoria especializada para cada momento da sua vida.</p>
         
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+        <div className="auto-grid">
           {[
             { title: "Românticas", icon: Heart },
             { title: "Corporativas", icon: Globe },
@@ -243,7 +244,7 @@ export default function UltraPremiumPage() {
       <section className="section-padding-vw" style={{ position: 'relative' }}>
         <div className="grid-cols-2">
           <div>
-            <h2 className="font-serif" style={{ fontSize: '2.5rem', color: '#fff', marginBottom: '2rem' }}>
+            <h2 className="font-serif section-title" style={{ color: '#fff', marginBottom: '2rem' }}>
               Consultoria Visto Express <br/> <span style={{ color: 'var(--gold-main)' }}>Simples e Eficiente</span>
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '3rem' }}>
@@ -267,7 +268,7 @@ export default function UltraPremiumPage() {
               Fale Conosco Agora
             </button>
           </div>
-          <div style={{ position: 'relative', height: '600px', borderRadius: '24px', overflow: 'hidden', border: '1px solid rgba(212, 175, 55, 0.3)' }}>
+          <div className="visto-img" style={{ position: 'relative', borderRadius: '24px', overflow: 'hidden', border: '1px solid rgba(212, 175, 55, 0.3)' }}>
              <Image src="/images/hero-premium.png" alt="Portugal Visto" fill sizes="(max-width: 1024px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
              <div style={{ position: 'absolute', top: '2rem', right: '2rem', background: 'rgba(10,20,40,0.9)', backdropFilter: 'blur(10px)', border: '1px solid var(--gold-main)', padding: '1.5rem', borderRadius: '16px', textAlign: 'center' }}>
                 <span style={{ color: 'var(--gold-main)', fontSize: '2rem', fontWeight: 'bold', display: 'block' }}>10% OFF</span>
@@ -279,7 +280,7 @@ export default function UltraPremiumPage() {
 
       {/* POR QUE ESCOLHER */}
       <section className="section-padding-sm" style={{ background: 'var(--secondary-navy)' }}>
-        <h2 className="font-serif" style={{ fontSize: '2.5rem', color: '#fff', marginBottom: '4rem', textAlign: 'center' }}>Por Que Escolher a AG Voyage</h2>
+        <h2 className="font-serif section-title" style={{ color: '#fff', marginBottom: '4rem', textAlign: 'center' }}>Por Que Escolher a AG Voyage</h2>
         <div className="grid-cols-4">
           {[
             { icon: Diamond, title: "Exclusividade em Cada Detalhe" },
@@ -292,7 +293,7 @@ export default function UltraPremiumPage() {
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 5 + i * 0.2, ease: "easeInOut" }}
               whileHover={{ y: -20, scale: 1.02 }} 
-              style={{ background: 'rgba(10,20,40,0.5)', border: '1px solid rgba(255,255,255,0.05)', padding: '2.5rem', borderRadius: '16px', textAlign: 'center', boxShadow: '0 10px 30px rgba(0,0,0,0.3)' }}
+              className="feature-card" style={{ background: 'rgba(10,20,40,0.5)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '16px', textAlign: 'center', boxShadow: '0 10px 30px rgba(0,0,0,0.3)' }}
             >
               <motion.div animate={{ rotate: [0, 5, -5, 0] }} transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}>
                 <feat.icon size={40} color="var(--gold-main)" style={{ margin: '0 auto 1.5rem auto' }} />

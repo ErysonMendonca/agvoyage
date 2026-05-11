@@ -226,6 +226,15 @@ h1, h2, h3, h4, .font-serif {
   .col-span-2 { grid-column: span 1; }
 }
 
+/* Specific Element Responsiveness */
+.hero-title { font-size: clamp(3rem, 7vw, 6rem); }
+.hero-subtitle { font-size: 1.4rem; }
+.section-title { font-size: 2.5rem; }
+.carousel-card { min-width: 350px; height: 500px; }
+.visto-img { height: 600px; }
+.feature-card { padding: 2.5rem; }
+.auto-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+
 @media (max-width: 768px) {
   .grid-cols-4 { grid-template-columns: 1fr; }
   .hero-buttons { flex-direction: column; gap: 1rem; width: 100%; align-items: stretch; }
@@ -234,4 +243,15 @@ h1, h2, h3, h4, .font-serif {
   .card-header { flex-direction: column; gap: 1rem; }
   .activity-row { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
   .activity-row > div:last-child { text-align: left !important; }
+  
+  /* Additional Page Elements */
+  .hero-title { font-size: 2.5rem !important; line-height: 1.2 !important; }
+  .hero-subtitle { font-size: 1.1rem !important; margin-bottom: 2rem !important; }
+  .section-title { font-size: 2rem !important; }
+  .carousel-card { min-width: 85vw !important; height: 400px !important; }
+  .visto-img { height: 350px !important; }
+  .feature-card { padding: 1.5rem !important; }
+  .auto-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .nav-btn { padding: 0.6rem 1rem !important; font-size: 0.8rem !important; }
+  .nav-lang { display: none; }
 }
