@@ -1,0 +1,32 @@
+
+> ag-voyage@0.1.0 build
+> next build
+
+▲ Next.js 16.2.6 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 12.4s
+  Running TypeScript ...
+Failed to type check.
+
+./src/app/dashboard/page.tsx:49:21
+Type error: Type '{ hidden: { y: number; opacity: number; }; visible: { y: number; opacity: number; transition: { type: string; stiffness: number; damping: number; }; }; }' is not assignable to type 'Variants'.
+  Property 'visible' is incompatible with index signature.
+    Type '{ y: number; opacity: number; transition: { type: string; stiffness: number; damping: number; }; }' is not assignable to type 'Variant'.
+      Type '{ y: number; opacity: number; transition: { type: string; stiffness: number; damping: number; }; }' is not assignable to type 'TargetAndTransition'.
+        Type '{ y: number; opacity: number; transition: { type: string; stiffness: number; damping: number; }; }' is not assignable to type '{ transition?: Transition<any> | undefined; transitionEnd?: ResolvedValues$1 | undefined; }'.
+          Types of property 'transition' are incompatible.
+            Type '{ type: string; stiffness: number; damping: number; }' is not assignable to type 'Transition<any> | undefined'.
+              Type '{ type: string; stiffness: number; damping: number; }' is not assignable to type 'TransitionWithValueOverrides<any>'.
+                Type '{ type: string; stiffness: number; damping: number; }' is not assignable to type 'ValueAnimationTransition<any>'.
+                  Types of property 'type' are incompatible.
+                    Type 'string' is not assignable to type 'AnimationGeneratorType | undefined'.
+
+  [90m47 |[0m         
+  [90m48 |[0m         {[90m/* Main Revenue Card */[0m}
+[31m[1m>[0m [90m49 |[0m         <motion.div variants={itemVariants} className=[32m"glass-panel premium-border"[0m style={...
+  [90m   |[0m                     [31m[1m^[0m
+  [90m50 |[0m           <div style={{ display: [32m'flex'[0m, justifyContent: [32m'space-between'[0m, alignItems: [32m'fle...[0m
+  [90m51 |[0m             <div>
+  [90m52 |[0m               <div style={{ color: [32m'rgba(255,255,255,0.6)'[0m, fontSize: [32m'1rem'[0m, textTransfor...
+Next.js build worker exited with code: 1 and signal: null

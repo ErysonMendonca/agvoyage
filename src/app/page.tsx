@@ -3,7 +3,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Image from "next/image";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
-import { Diamond, Globe, ShieldCheck, Plane, CheckCircle, ArrowRight, Play, Heart, MapPin, ChevronRight, ChevronLeft, Instagram, Facebook, Twitter, Star } from "lucide-react";
+import { Diamond, Globe, ShieldCheck, Plane, CheckCircle, ArrowRight, Play, Heart, MapPin, ChevronRight, ChevronLeft, Star } from "lucide-react";
 import Link from 'next/link';
 
 // ==========================================

@@ -1,11 +1,11 @@
 "use client";
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { Users, TrendingUp, CalendarCheck, MapPin, ArrowUpRight, ArrowDownRight, Activity } from 'lucide-react';
 import Image from 'next/image';
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -13,7 +13,7 @@ const containerVariants = {
   }
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { y: 30, opacity: 0 },
   visible: { y: 0, opacity: 1, transition: { type: 'spring', stiffness: 120, damping: 20 } }
 };
