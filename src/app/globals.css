@@ -1,0 +1,129 @@
+:root {
+  --primary-navy: #040d1b;
+  --secondary-navy: #0a192f;
+  --gold-main: #c5a028;
+  --gold-light: #e6d5a7;
+  --text-white: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.7);
+  --glass-bg: rgba(10, 25, 47, 0.7);
+  --glass-border: rgba(197, 160, 40, 0.3);
+  
+  --font-cinzel: var(--font-cinzel), serif;
+  --font-inter: var(--font-inter), sans-serif;
+
+  --background: var(--primary-navy);
+  --foreground: var(--text-white);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-cinzel);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.gold-text {
+  color: var(--gold-main);
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #c5a028 0%, #e6d5a7 50%, #c5a028 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+}
+
+.hero-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.left-panel {
+  flex: 1.2;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+}
+
+.right-panel {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.category-bar {
+  position: absolute;
+  bottom: 2rem;
+  left: 4rem;
+  right: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(4, 13, 27, 0.8);
+  border: 1px solid var(--gold-main);
+  border-radius: 50px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  z-index: 20;
+}
+
+.category-item {
+  color: var(--text-white);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.category-item:hover {
+  opacity: 1;
+  color: var(--gold-main);
+}
+
+@media (max-width: 1024px) {
+  .hero-container {
+    flex-direction: column;
+  }
+  .left-panel {
+    padding: 2rem;
+    min-height: 60vh;
+  }
+  .right-panel {
+    min-height: 40vh;
+  }
+  .category-bar {
+    left: 1rem;
+    right: 1rem;
+    padding: 0.8rem 1rem;
+    font-size: 0.6rem;
+  }
+}
+
